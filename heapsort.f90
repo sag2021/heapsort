@@ -1,5 +1,29 @@
-! 
-! Fortran90 functions for sorting arrays using the heapsort
+! BSD-3-Clause 
+!
+! Copyright 2024 S.A Gilchrist
+!
+! Redistribution and use in source and binary forms, with or without modification, 
+! are permitted provided that the following conditions are met:
+!
+! 1. Redistributions of source code must retain the above copyright notice, 
+! this list of conditions and the following disclaimer.
+!
+! 2. Redistributions in binary form must reproduce the above copyright notice, 
+! this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+!
+! 3. Neither the name of the copyright holder nor the names of its contributors 
+! may be used to endorse or promote products derived from this software without specific prior written permission.
+!
+! THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+! INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A !PARTICULAR PURPOSE ARE DISCLAIMED. 
+! IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, 
+! OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT !LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+! OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+! OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+! EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+!
+
+! Fortran 2003 functions for sorting arrays using the heapsort
 ! algorithim. 
 !
 ! DESC: Performs the in-place sorting of a 1D vector of real 
@@ -31,26 +55,6 @@
 !      not be the case in Fortran since the INTEGER type is always
 !      signed.
 !
-! Version 3.0
-! Author: Stuart Gilchrist 
-! History: 
-! o heapsort_version subroutine added 17/01/2013
-! o Single precision preprocessor option added 
-! o Code cleaned up. More comments added. 16 March 2015
-!   - HEAP_SORT_REAL parameter added 
-!   - Module name changed to heap_sort_module
-!   - Subroutine now accepts optional second argument perm.
-!     This records the permutation performed by the sorting
-!     i.e. perm(n) gives the position of the element sorted(n)
-!          in the original array. 
-!
-!          rand(perm(n)) = sorted(n)
-!
-! o 1D assumed shape dummy variables replaced with 1D explicit shape
-!   arrays. This makes it possible to pass input of any dimension.
-!
-!  + Things needed add-preprocessor
-!
 
 MODULE heap_sort_module
 
@@ -74,8 +78,6 @@ MODULE heap_sort_module
   PRIVATE :: swap,swap_real,swap_integer
 
 CONTAINS
-
-! ---------------------------------------------------------------------
 
 SUBROUTINE heap_sort(data_in,nsize,perm)
 !
