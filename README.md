@@ -1,6 +1,6 @@
 # Heapsort
 
-Heapsort subroutine for Fortran. Developed for a long forgotten project. Code is Fortran 2003, 
+Heapsort subroutine for Fortran. Developed for a long-forgotten project. Code is Fortran 2003, 
 because it makes selecting INTEGER easier. 
 
 Main subroutine: heap_sort(data_in,nsize,perm)
