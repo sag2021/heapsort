@@ -38,7 +38,7 @@ PROGRAM main
   ENDIF
 
   ! Check permutation vector maps values correctly
-  DO i=2,SIZE(perm)
+  DO i=1,SIZE(perm)
     IF(rand(perm(i)) .ne. sorted(i)) THEN
       PRINT *,"Permutation produces wrong mapping. Test FAILED"
       STOP "FAIL"
